@@ -1,3 +1,5 @@
-hello\Application.class
-hello\Quote.class
 hello\Value.class
+hello\Application.class
+hello\Greeting.class
+hello\GreetingController.class
+hello\Quote.class

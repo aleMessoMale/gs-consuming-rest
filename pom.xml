@@ -6,6 +6,9 @@
     <groupId>org.springframework</groupId>
     <artifactId>gs-consuming-rest</artifactId>
     <version>0.1.0</version>
+    <packaging>war</packaging>
+
+
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -15,30 +18,42 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <start-class>hello.Application</start-class>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- We need to include the javax.servlet API specs, the implementation will be provided by Wildfly / JBoss
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 
     <build>
+        <finalName>rest-consuming-service</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
